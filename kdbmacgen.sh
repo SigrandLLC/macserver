@@ -25,8 +25,7 @@ showerr()
 [ -r $MACCOUNTER -a -w $MACCOUNTER ] || showerr "Unable to read or write mac counter file $MACCOUNTER"
 [ -w `dirname $KDB_MAC_FILE` ] || showerr "Unable to write kdb mac file $KDB_MAC_FILE"
 
-# delete kdb mac file if it exists
-[ -e $KDB_MAC_FILE ] && rm $KDB_MAC_FILE
+rm -f $KDB_MAC_FILE
 
 # read current MAC counter
 curmac=$(cat $MACCOUNTER)
