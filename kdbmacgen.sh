@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Generates kdb mac file: writes to $KDB_MAC_FILE lines like "sys_iface_eth0_mac=00:33:...".
 # MAC-addresses are generated continuosly.
 # Written by Kazantsev A.V., Sigrand, Novosibirsk, kazantsev@sigrand.ru
