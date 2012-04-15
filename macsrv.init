@@ -1,0 +1,17 @@
+#!/bin/sh
+
+case $1 in
+	start)
+		echo "Starting macsrv"
+		su -c "nohup /home/macsrv/macsrv.sh >/dev/null 2>&1 &" macsrv
+		;;
+	stop)
+		echo "Stopping macsrv"
+		kill `cat /home/macsrv/pid`
+		killall nc
+		rm /home/macsrv/pid
+		;;
+	*)
+		echo "$0: Usage: start or stop"
+		;;
+esac
