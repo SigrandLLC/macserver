@@ -38,6 +38,7 @@ for i in 1 2 3; do
     iface_idx=0
     while [ $iface_idx -lt $iface_num ]; do
         curmachex=$(printf "%.12x" $curmac)
+        # /bin/bash required due to line below:
         mac_formatted=${curmachex:0:2}:${curmachex:2:2}:${curmachex:4:2}:${curmachex:6:2}:${curmachex:8:2}:${curmachex:10:2}
         echo sys_iface_${iface_name}${iface_idx}_mac=$mac_formatted >>$KDB_MAC_FILE
         curmac=$(($curmac + 1))
