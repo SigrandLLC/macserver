@@ -1,0 +1,59 @@
+[user]
+	name = MAC Server
+	email = support@sigrand.ru
+
+# use http_proxy environment variable
+
+[core]
+#	gitProxy="ssh" for "kernel.org"
+#	gitProxy=default-proxy ; for the rest
+	compression = 9
+	editor = nano -w
+
+[alias]
+	st   = status
+	ci   = commit
+	co   = checkout
+	br   = branch
+	re   = remote
+	what = whatchanged
+	sh   = !git-sh
+	sub  = submodule
+
+[color]
+	branch = auto
+	diff   = auto
+	interactive = auto
+	pager  = true
+	ui     = auto
+	status = true
+
+[diff]
+	renames = copy # basic rename detection + detect copies
+
+[commit]
+#	template = <file>
+#	Specify a file to use as the template for new commit messages.
+
+[push]
+	default = matching # default
+
+[rerere]
+	enabled = true
+
+[merge]
+	log = false
+	renameLimit = 1000000
+
+[mergetool]
+	keepBackup = true # true is the default
+
+[receive]
+	fsckObjects = true
+
+[status]
+	submodulesummary = true
+
+[i18n]
+	commitencoding = UTF-8
+	#logOutputEncoding = KOI8-R
