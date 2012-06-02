@@ -5,6 +5,7 @@
 # Written by Kazantsev A.V., Sigrand, Novosibirsk, kazantsev@sigrand.ru
 
 export KDBMACGEN="/home/macsrv/kdbmacgen.sh"
+export MACGEN="/home/macsrv/macgen.sh"
 export MACCOUNTER="/home/macsrv/maccounter"
 export KDB_MAC_FILE="/tftpboot/kdbmac"
 export LOG="/home/macsrv/log"
@@ -42,6 +43,18 @@ while true; do
                     echo "kdb mac file deleted";\
                     echo `date` "Deleting kdb mac file" >>$LOG
                     exit 0;\
+                    ;;\
+                "GET_MAC")\
+                    echo "Generating single MAC"; \
+                    mac=`$MACGEN $MACCOUNTER`; \
+                    if test $? -eq 0; then \
+                       echo "SUCCESS: $mac"; \
+                       echo `date` "SUCCESS single MAC generated" >>$LOG; \
+                    else \
+                       echo "FAIL: There are errors while generating single MAC"; \
+                       echo `date` "FAIL while generating single MAC" >>$LOG; \
+                    fi;\
+                    exit 0; \
                     ;;\
                 *)\
                     echo "Unknown command";\
