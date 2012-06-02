@@ -1,3 +1,7 @@
 /pid
 /.ssh
 /maccounter
+/log
+/.bash_history
+/.bashrc
+/.profile
