@@ -13,6 +13,13 @@ PID="/home/macsrv/pid"
 IP="192.168.2.1"
 PORT="1030"
 
+if { /sbin/ifconfig | fgrep $IP >/dev/null; }; then
+   :
+else
+   IP=0.0.0.0
+fi
+
+
 echo $$ >$PID
 
 echo "" >>$LOG
